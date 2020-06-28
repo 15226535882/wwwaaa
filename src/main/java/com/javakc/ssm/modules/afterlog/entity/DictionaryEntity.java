@@ -1,4 +1,4 @@
-package com.javakc.ssm.modules.contacts.entity;
+package com.javakc.ssm.modules.afterlog.entity;
 
 import com.javakc.ssm.base.entity.BaseEntity;
 

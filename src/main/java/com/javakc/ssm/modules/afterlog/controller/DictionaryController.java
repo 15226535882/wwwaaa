@@ -1,4 +1,4 @@
-package com.javakc.ssm.modules.centre_table.controller;
+package com.javakc.ssm.modules.afterlog.controller;
 
 import com.javakc.ssm.base.page.Page;
 import com.javakc.ssm.modules.work.entity.DictionaryEntity;

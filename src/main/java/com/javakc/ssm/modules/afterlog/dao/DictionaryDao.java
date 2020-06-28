@@ -1,4 +1,4 @@
-package com.javakc.ssm.modules.after_log.dao;
+package com.javakc.ssm.modules.afterlog.dao;
 
 import com.javakc.ssm.base.dao.BaseDao;
 import com.javakc.ssm.base.dao.MyBatisDao;

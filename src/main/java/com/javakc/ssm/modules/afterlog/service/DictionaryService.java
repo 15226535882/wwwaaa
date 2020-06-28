@@ -1,4 +1,4 @@
-package com.javakc.ssm.modules.centre_table.service;
+package com.javakc.ssm.modules.afterlog.service;
 
 import com.javakc.ssm.base.page.Page;
 import com.javakc.ssm.base.service.BaseService;
