@@ -17,7 +17,7 @@
 <!--        <result property="importanceLevel" column="IMPORTANCE_LEVEL" />-->
 <!--        <result property="companyLevel" column="COMPANY_LEVEL" />-->
 <!--        <result property="areaLevel" column="AREA_LEVEL" />-->
-        <collection property="businessEntity" javaType="business">
+        <collection property="businessEntity" ofType="business">
             <id property="id" column="id" />
             <result property="annualFee" column="ANNUAL_FEE" />
 <!--            <result property="resourceFee" column="RESOURCE_FEE" />-->
@@ -46,7 +46,7 @@
     </resultMap>
     <select id="findList" resultMap="organization" >
 --        select o.organization_name,b.ANNUAL_FEE,c.name from organization o left join business b on o.id=b.id left join CONTACTS c on o.id=c.ORGANIZATION_ID
-select o.organization_name,b.ANNUAL_FEE from organization o left join business b on o.id=b.id
+select o.organization_name,b.ANNUAL_FEE from organization o left join business b on o.id=b.organization_id
     </select>
 
 </mapper>

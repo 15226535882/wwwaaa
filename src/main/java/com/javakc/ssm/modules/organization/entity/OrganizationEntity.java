@@ -57,6 +57,10 @@ public class OrganizationEntity extends BaseEntity<OrganizationEntity>{
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public List<BusinessEntity> getBusinessEntity() {
         return businessEntity;
     }
@@ -64,13 +68,6 @@ public class OrganizationEntity extends BaseEntity<OrganizationEntity>{
     public void setBusinessEntity(List<BusinessEntity> businessEntity) {
         this.businessEntity = businessEntity;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-
-
 
     public String getOrganizationName() {
         return organizationName;
@@ -87,8 +84,6 @@ public class OrganizationEntity extends BaseEntity<OrganizationEntity>{
     public void setOrganizationAddress(String organizationAddress) {
         this.organizationAddress = organizationAddress;
     }
-
-
 
     public String getTelephone() {
         return telephone;
