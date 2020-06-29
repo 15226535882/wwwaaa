@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public class BaseEntity<T> {
 
-    protected  String id;// 主键id
+
 	protected String remarks;	// 备注
 	protected Date createDate;	// 创建日期
 	protected Date updateDate;	// 更新日期
