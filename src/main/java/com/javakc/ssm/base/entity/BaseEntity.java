@@ -1,7 +1,7 @@
 package com.javakc.ssm.base.entity;
 
 import com.javakc.ssm.base.page.Page;
-import com.javakc.ssm.modules.system.user.entity.UserEntity;
+
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 import javax.xml.bind.annotation.XmlTransient;
@@ -19,25 +19,25 @@ public class BaseEntity<T> {
 	protected String remarks;	// 备注
 	protected Date createDate;	// 创建日期
 	protected Date updateDate;	// 更新日期
-	protected UserEntity createUser;	// 创建人
-	protected UserEntity updateUser;	// 更新人
+//	protected UserEntity createUser;	// 创建人
+//	protected UserEntity updateUser;	// 更新人
 	protected int delFlag; 	// 删除标记（0：正常；1：删除；2：审核）
 	/**
 	 * 是否是新记录（默认：false），调用setIsNewRecord()设置新记录，使用自定义ID。
 	 * 设置为true后强制执行插入语句，ID不会自动生成，需从手动传入。
 	 */
 	protected boolean isNewRecord = false;
-	
+
 	/**
 	 * 当前实体分页对象
 	 */
 	protected Page<T> page;
-	
+
 	/**
 	 * 自定义SQL（SQL标识，SQL内容）
 	 */
 	protected Map<String, String> sqlMap;
-	
+
 	@JsonIgnore
 	@XmlTransient
 	public Map<String, String> getSqlMap() {
@@ -50,7 +50,7 @@ public class BaseEntity<T> {
 	public void setSqlMap(Map<String, String> sqlMap) {
 		this.sqlMap = sqlMap;
 	}
-	
+
 	public String getRemarks() {
 		return remarks;
 	}
@@ -69,18 +69,18 @@ public class BaseEntity<T> {
 	public void setUpdateDate(Date updateDate) {
 		this.updateDate = updateDate;
 	}
-	public UserEntity getCreateUser() {
-		return createUser;
-	}
-	public void setCreateUser(UserEntity createUser) {
-		this.createUser = createUser;
-	}
-	public UserEntity getUpdateUser() {
-		return updateUser;
-	}
-	public void setUpdateUser(UserEntity updateUser) {
-		this.updateUser = updateUser;
-	}
+//	public UserEntity getCreateUser() {
+//		return createUser;
+//	}
+//	public void setCreateUser(UserEntity createUser) {
+//		this.createUser = createUser;
+//	}
+//	public UserEntity getUpdateUser() {
+//		return updateUser;
+//	}
+//	public void setUpdateUser(UserEntity updateUser) {
+//		this.updateUser = updateUser;
+//	}
 	public int getDelFlag() {
 		return delFlag;
 	}
