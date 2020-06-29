@@ -14,12 +14,22 @@ import java.util.List;
 public class OrganizationEntity extends BaseEntity<OrganizationEntity>{
     private  int id;
     private List<BusinessEntity> businessEntity;
+
+//    public List<LiuContractEntity> getLiuContractEntities() {
+//        return liuContractEntities;
+//    }
+//
+//    public void setLiuContractEntities(List<LiuContractEntity> liuContractEntities) {
+//        this.liuContractEntities = liuContractEntities;
+//    }
+//
+//    private  List<LiuContractEntity> liuContractEntities;
     /** 机构名称 */
     private String organizationName;
     /** 机构地址 */
     private String organizationAddress;
     /** 手机 */
-    private int phone ;
+
     /** 电话 */
     private String telephone ;
     /** 国家 */
@@ -78,13 +88,7 @@ public class OrganizationEntity extends BaseEntity<OrganizationEntity>{
         this.organizationAddress = organizationAddress;
     }
 
-    public int getPhone() {
-        return phone;
-    }
 
-    public void setPhone(int phone) {
-        this.phone = phone;
-    }
 
     public String getTelephone() {
         return telephone;

@@ -1,14 +1,13 @@
 package com.javakc.ssm.modules.system.cache.service;
 
+import com.javakc.ssm.modules.dictionary.entity.DictionaryEntity;
+import org.apache.log4j.*;
+import org.springframework.stereotype.Service;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-
-import org.apache.log4j.Logger;
-import org.springframework.stereotype.Service;
-
-import com.javakc.ssm.modules.dictionary.entity.DictionaryEntity;
 
 /**
  * 基础缓存信息模块逻辑层实现
