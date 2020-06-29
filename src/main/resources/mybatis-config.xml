@@ -23,6 +23,7 @@
 	
 	<!-- 配置mybatis映射对象别名 -->
 	<typeAliases>
+        <typeAlias type="com.javakc.ssm.modules.business.entity.BusinessEntity" alias="business" />
         <typeAlias type="com.javakc.ssm.modules.organization.entity.OrganizationEntity" alias="organization" />
 		<typeAlias type="com.javakc.ssm.modules.system.user.entity.UserEntity" alias="user" />
 		<typeAlias type="com.javakc.ssm.modules.system.role.entity.RoleEntity" alias="role" />
