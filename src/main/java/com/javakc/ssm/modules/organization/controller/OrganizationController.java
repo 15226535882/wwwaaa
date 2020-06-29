@@ -20,11 +20,13 @@ import java.util.List;
  * @version v0.1
  */
 @Controller
-@RequestMapping(value = "/dictionary")
+@RequestMapping(value = "/organization")
 public class OrganizationController {
 
     @Autowired
     protected OrganizationService organizationService;
+   
+    @RequestMapping(value="/query")
     public List<OrganizationEntity> findAll(OrganizationEntity o){
         return organizationService.findList(o);
     }

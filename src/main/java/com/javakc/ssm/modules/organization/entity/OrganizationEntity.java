@@ -9,6 +9,7 @@ import org.springframework.format.annotation.DateTimeFormat;
  * @version 0.1
  */
 public class OrganizationEntity extends BaseEntity<OrganizationEntity>{
+    private  int id;
     /** 机构名称 */
     private String organizationName;
     /** 机构地址 */
@@ -16,15 +17,15 @@ public class OrganizationEntity extends BaseEntity<OrganizationEntity>{
     /** 手机 */
     private int phone ;
     /** 电话 */
-    private int telephone ;
+    private String telephone ;
     /** 国家 */
-    private String country ;
+    private int country ;
     /** 省份 */
     private String province ;
     /** 市名 */
     private String city ;
     /** 邮编 */
-    private int zipCode ;
+    private String zipCode ;
     /** 网站 */
     private String website ;
     /** 机构级别 */
