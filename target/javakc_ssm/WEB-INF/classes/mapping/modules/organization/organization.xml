@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javakc.ssm.modules.organization.dao.OrganizationDao">
+    <resultMap id="organization" type="menu">
+        <id property="Id" column="id" />
+        <result property="organizationName" column="organization_name" />
+
+    </resultMap>
+    <select id="findList" resultType="Map" >
+       select * from organization
+    </select>
+
+</mapper>
