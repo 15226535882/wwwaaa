@@ -7,14 +7,6 @@ public class LiuContractEntity extends BaseEntity<LiuContractEntity> {
     private int id ;
 
 
-    public EmployeeEntity getEmployeeEntity() {
-        return employeeEntity;
-    }
-
-    public void setEmployeeEntity(EmployeeEntity employeeEntity) {
-        this.employeeEntity = employeeEntity;
-    }
-
     /** 姓名 */
     private String name ;
     /** 性别 1男2女 */

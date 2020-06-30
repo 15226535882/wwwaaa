@@ -20,11 +20,19 @@ import java.util.List;
 @Service
 @Transactional(readOnly = true)
 public class OrganizationService extends BaseService<OrganizationDao, OrganizationEntity>{
+	
 
 
-    public Page<OrganizationEntity> queryPage(Page<OrganizationEntity> page, OrganizationEntity o) {
-        page.setPageSize(10);
-        return page.setList(dao.findList(o));
-
-    }
+//	@Transactional(readOnly = false)
+//	public void save(DictionaryEntity entity, String[] code, String[] val)
+//	{
+//		for(int i=0;i<code.length;i++)
+//		{
+//			entity.setDataId(CommonUtil.uuid());
+//			entity.setDataCode(code[i]);
+//			entity.setDataVal(val[i]);
+//			dictionaryDao.insert(entity);
+//		}
+//	}
+	
 }
