@@ -4,19 +4,19 @@
     <resultMap id="organization" type="organization">
         <id property="id" column="id" />
         <result property="organizationName" column="organization_name" />
-<!--        <result property="organizationAddress" column="ORGANIZATION_ADDRESS" />-->
-<!--        <result property="contacts" column="CONTACTS" />-->
-<!--        <result property="telephone" column="TELEPHONE" />-->
-<!--        <result property="country" column="COUNTRY" />-->
-<!--        <result property="province" column="PROVINCE" />-->
-<!--        <result property="city" column="CITY" />-->
-<!--        <result property="zipCode" column="ZIP_CODE" />-->
-<!--        <result property="website" column="WEBSITE" />-->
-<!--        <result property="organizationLevel" column="ORGANIZATION_LEVEL" />-->
-<!--        <result property="industryCategory" column="INDUSTRY_CATEGORY" />-->
-<!--        <result property="importanceLevel" column="IMPORTANCE_LEVEL" />-->
-<!--        <result property="companyLevel" column="COMPANY_LEVEL" />-->
-<!--        <result property="areaLevel" column="AREA_LEVEL" />-->
+        <result property="organizationAddress" column="ORGANIZATION_ADDRESS" />
+        <result property="contacts" column="CONTACTS" />
+        <result property="telephone" column="TELEPHONE" />
+        <result property="country" column="COUNTRY" />
+        <result property="province" column="PROVINCE" />
+        <result property="city" column="CITY" />
+        <result property="zipCode" column="ZIP_CODE" />
+        <result property="website" column="WEBSITE" />
+        <result property="organizationLevel" column="ORGANIZATION_LEVEL" />
+        <result property="industryCategory" column="INDUSTRY_CATEGORY" />
+        <result property="importanceLevel" column="IMPORTANCE_LEVEL" />
+        <result property="companyLevel" column="COMPANY_LEVEL" />
+        <result property="areaLevel" column="AREA_LEVEL" />
         <collection property="businessEntity" ofType="business">
             <id property="id" column="id" />
             <result property="annualFee" column="ANNUAL_FEE" />
@@ -32,21 +32,21 @@
 <!--            <result property="remarkMessage" column="REMARK_MESSAGE" />-->
 <!--            <result property="organizationId" column="ORGANIZATION_ID" />-->
         </collection>
-<!--        <collection property="liuContractEntities" javaType="com.javakc.ssm.modules.organization.entity.LiuContractEntity">-->
-<!--            <id property="id" column="id" />-->
-<!--            <result property="name" column="NAME" />-->
-<!--            <result property="mobilePhone" column="MOBILE_PHONE" />-->
-<!--            <association property="employee" javaType="EmployeeEntity">-->
-<!--                <id property="id" column="id" />-->
-<!--                <result property="employeeName" column="EMPLOYEE_NAME" />-->
-<!--            </association>-->
+        <collection property="liuContractEntities" ofType="com.javakc.ssm.modules.organization.entity.LiuContractEntity">
+            <id property="id" column="id" />
+            <result property="name" column="NAME" />
+            <result property="mobilePhone" column="MOBILE_PHONE" />
+            <association property="employeeEntity" javaType="employee">
+                <id property="id" column="id" />
+                <result property="employeeName" column="EMPLOYEE_NAME" />
+            </association>
 
 
-<!--        </collection>-->
+        </collection>
     </resultMap>
     <select id="findList" resultMap="organization" >
---        select o.organization_name,b.ANNUAL_FEE,c.name from organization o left join business b on o.id=b.id left join CONTACTS c on o.id=c.ORGANIZATION_ID
-select o.organization_name,b.ANNUAL_FEE from organization o left join business b on o.id=b.organization_id
+       select o.organization_name,b.ANNUAL_FEE,c.name,c.MOBILE_PHONE,e.employee_name from organization o left join business b on o.id=b.id left join CONTACTS c on o.id=c.ORGANIZATION_ID left join employee e on c.employee_id=e.id
+
     </select>
 
 </mapper>
