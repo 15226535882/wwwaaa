@@ -1,13 +1,26 @@
-//package com.javakc.ssm.modules.afterlog.controller;
-//
+package com.javakc.ssm.modules.afterlog.controller;
+
+import com.javakc.ssm.base.page.Page;
+import com.javakc.ssm.modules.afterlog.entity.AfterlogEntity;
+import com.javakc.ssm.modules.afterlog.service.AfterlogService;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
 //import com.javakc.ssm.base.page.Page;
 //import com.javakc.ssm.modules.work.entity.DictionaryEntity;
-//import com.javakc.ssm.modules.work.service.DictionaryService;
+
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
 //import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Controller;
+
 //import org.springframework.ui.ModelMap;
-//import org.springframework.web.bind.annotation.RequestMapping;
+
 //
 //import javax.servlet.http.HttpServletRequest;
 //import javax.servlet.http.HttpServletResponse;
@@ -17,10 +30,52 @@
 // * @author javakc
 // * @version v0.1
 // */
-//@Controller
-//@RequestMapping(value = "/dictionary")
-//public class DictionaryController {
-//
+
+/**
+ * 售后日志表现层
+ */
+@Controller
+@RequestMapping(value = "/afterlog")
+public class AfterlogController {
+
+    @Autowired
+	private AfterlogService afterlogService;
+    //查询方法
+  /**
+     	 * 根据条件分页查询
+     	 * @param entity 查询条件
+     	 * @param model	 页面传参对象
+     	 * @param request 请求
+     	 * @param response 响应
+     	 * @return			展示数据列表页面
+     	 * @throws Exception 抛出异常
+     	 */
+    @RequiresPermissions("afterlog:query")
+	@RequestMapping(value="/query")
+
+	public String query(AfterlogEntity entity, ModelMap model, HttpServletRequest request, HttpServletResponse response)
+			throws Exception
+	{
+		model.put("page", afterlogService.findAfterlog(new Page<AfterlogEntity>(request, response), entity));
+		model.put("entity", entity);
+		return "afterlog/list";
+	}
+
+//		/**
+//	 * 添加方法
+//	 * @param entity 实体对象
+//	 * @return
+//	 */
+//	@RequiresPermissions("afterlog:create")
+//	@RequestMapping(value="/create")
+//	public String create(AfterlogEntity entity, String[] code, String[] val)
+//	{
+//		afterlogService.save(entity, code, val);
+//		return "redirect:/afterlog/query.do";
+//	}
+
+}
+
 //	@Autowired
 //	private DictionaryService dictionaryService;
 //
