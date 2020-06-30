@@ -16,6 +16,6 @@ public interface AfterlogDao extends BaseDao<AfterlogEntity> {
 
 //    public int insert(AfterlogEntity entity);
 
-    public List<AfterlogEntity> findyanyun();
+//    public List<AfterlogEntity> findyanyun();
 
 }
