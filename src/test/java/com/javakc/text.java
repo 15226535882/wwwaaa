@@ -1,5 +1,6 @@
 package com.javakc;
 
+import com.javakc.ssm.base.page.Page;
 import com.javakc.ssm.modules.organization.entity.OrganizationEntity;
 import com.javakc.ssm.modules.organization.service.OrganizationService;
 import org.junit.Test;
@@ -18,8 +19,9 @@ public class text {
     @Test
     public void text1() {
         OrganizationEntity o=new OrganizationEntity();
-        List<OrganizationEntity> list = organizationService.findList(o);
-        System.out.println(list);
+        Page<OrganizationEntity> list =new Page<>();
+        Page<OrganizationEntity> list1 = organizationService.queryPage(list,o);
+        System.out.println(list1);
 
 
     }
