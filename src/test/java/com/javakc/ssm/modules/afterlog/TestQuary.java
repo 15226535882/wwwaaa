@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:spring-mybatis.xml", "classpath:spring-shiro.xml"} )
+@ContextConfiguration(locations = {"classpath*:spring-mybatis.xml", "classpath*:spring-shiro.xml"} )
 public class TestQuary {
 
 //    @Autowired
@@ -24,9 +24,9 @@ public class TestQuary {
 //        AfterlogEntity entity = new AfterlogEntity();
 //        List<AfterlogEntity> list = afterlogDao.findyanyun();
 //        System.out.println(list.size());
-//
-//
-//    }
+
+
+
 @Autowired
 private AfterlogService afterlogDao;
     @Test

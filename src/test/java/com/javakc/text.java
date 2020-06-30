@@ -11,7 +11,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath*:/spring-mybatis.xml","classpath*:spring-shiro.xml"})
 public class text {
     @Autowired
     public OrganizationService organizationService;

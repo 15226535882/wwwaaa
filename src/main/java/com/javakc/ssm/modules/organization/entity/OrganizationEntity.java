@@ -15,15 +15,15 @@ public class OrganizationEntity extends BaseEntity<OrganizationEntity>{
     private  int id;
     private List<BusinessEntity> businessEntity;
 
-//    public List<LiuContractEntity> getLiuContractEntities() {
-//        return liuContractEntities;
-//    }
-//
-//    public void setLiuContractEntities(List<LiuContractEntity> liuContractEntities) {
-//        this.liuContractEntities = liuContractEntities;
-//    }
-//
-//    private  List<LiuContractEntity> liuContractEntities;
+    public List<LiuContractEntity> getLiuContractEntities() {
+        return liuContractEntities;
+    }
+
+    public void setLiuContractEntities(List<LiuContractEntity> liuContractEntities) {
+        this.liuContractEntities = liuContractEntities;
+    }
+
+    private  List<LiuContractEntity> liuContractEntities;
     /** 机构名称 */
     private String organizationName;
     /** 机构地址 */

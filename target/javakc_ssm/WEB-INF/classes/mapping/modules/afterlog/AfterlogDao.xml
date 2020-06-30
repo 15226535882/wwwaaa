@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.javakc.ssm.modules.afterlog.dao.AfterlogDao">
 
-	<resultMap id="afterlog" type="afterlog">
+	<resultMap id="afterlog" type="com.javakc.ssm.modules.afterlog.entity.AfterlogEntity">
         <id property="afterTitle" column="after_title" />
         <result property="afterType" column="after_type" />
         <result property="afterContent" column="after_content" />
@@ -11,10 +11,15 @@
         <result property="closedDate" column="closed_date" />
     </resultMap>
 
+<!-- select id后是方法，resultMap="afterlog"和 resultMap id 相对应查到的数据封装到map里，数据库查到的字段与实体类属性一一对应。type里为找到实体类的路径，以此找到属性  -->
 	<select id="findList" resultMap="afterlog">
 		SELECT * FROM AFTER_LOG
 
 	</select>
+<!--    <select id="findyanyun" resultMap="afterlog">-->
+<!--		SELECT * FROM AFTER_LOG-->
+
+<!--	</select>-->
 <!--	-->
 <!--	<insert id="insert">-->
 <!--		INSERT INTO DATA_DICTIONARY(DATA_ID, DATA_NAME, DATA_TYPE, DATA_CODE, DATA_VAL, DATA_COMMON) -->
@@ -39,4 +44,4 @@
 <!--	    </foreach>-->
 <!--	</delete>-->
 <!--	-->
-<!--</mapper>-->
+</mapper>
