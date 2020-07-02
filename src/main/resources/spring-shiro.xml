@@ -44,11 +44,11 @@
                     3. /admin? 匹配一个字符 /admin        /user/userList 代表不同的层级
 
                  -->
-                /static/** = anon
-                /common/** = anon
-                /login* = anon
-                /logout = logout
-                /** = authc
+<!--                /static/** = anon-->
+<!--                /common/** = anon-->
+<!--                /login* = anon-->
+<!--                /logout = logout-->
+<!--                /** = authc-->
             </value>
         </property>
     </bean>

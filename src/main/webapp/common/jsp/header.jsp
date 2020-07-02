@@ -1,6 +1,6 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%
-String path = request.getContextPath()+"/";
+    String path = request.getContextPath()+"/";
 %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -15,7 +15,7 @@ String path = request.getContextPath()+"/";
 <link href="<%=path%>static/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
 
 <script type="text/javascript">
-	var root = '<%=path%>';
+    var root = '<%=path%>';
 </script>
 <script type="text/javascript" src="<%=path%>static/js/jquery.min.js"></script>
 <script type="text/javascript" src="<%=path%>static/js/bootstrap.min.js?v=3.3.5"></script>

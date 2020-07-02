@@ -32,6 +32,8 @@ public class OrganizationController {
     public ModelAndView query(OrganizationEntity entity, ModelAndView model,
                               HttpServletRequest request, HttpServletResponse response) throws Exception
     {
+        System.out.println(entity.getOrganizationName());
+        System.out.println("--------------------------------------------------------");
         model.addObject("page", organizationService.queryPage(new Page<OrganizationEntity>(request, response), entity));
         model.addObject("entity", entity);
         model.setViewName("organization/list");
@@ -43,10 +45,17 @@ public class OrganizationController {
         organizationService.save(o);
         return "redirect:/organization/query.do";
     }
-    @RequestMapping(value="/update")
-    public String Update(String id,ModelMap modelMap){
-        modelMap.addAttribute("update",organizationService.get(id));
-        return "redirect:/organization/query.do";
+      @RequestMapping(value="/delete")
+    public String delete(){
+        System.out.println("删除操作");
+
+        return "";
+    }
+    @RequestMapping(value="/view")
+    public String view(){
+        System.out.println("执行操作");
+
+        return "organization/create";
     }
 
 }
