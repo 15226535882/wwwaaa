@@ -2,6 +2,7 @@ package com.javakc.ssm.modules.organization.entity;
 
 import com.javakc.ssm.base.entity.BaseEntity;
 import com.javakc.ssm.modules.business.entity.BusinessEntity;
+import com.javakc.ssm.modules.org.tree.entity.OrgtreeEntity;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.List;
@@ -34,10 +35,35 @@ public class OrganizationEntity extends BaseEntity<OrganizationEntity>{
     private String telephone ;
     /** 国家 */
     private int country ;
-    /** 省份 */
-    private String province ;
-    /** 市名 */
-    private String city ;
+
+
+    public String getAhId() {
+        return ahId;
+    }
+
+    public void setAhId(String ahId) {
+        this.ahId = ahId;
+    }
+    private String province;
+    private String city;
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    private String ahId;
     /** 邮编 */
     private String zipCode ;
     /** 网站 */
@@ -101,21 +127,6 @@ public class OrganizationEntity extends BaseEntity<OrganizationEntity>{
         this.country = country;
     }
 
-    public String getProvince() {
-        return province;
-    }
-
-    public void setProvince(String province) {
-        this.province = province;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
 
     public String getZipCode() {
         return zipCode;

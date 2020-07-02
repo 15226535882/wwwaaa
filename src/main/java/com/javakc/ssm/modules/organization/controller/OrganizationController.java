@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,9 +26,27 @@ public class OrganizationController {
 
     @Autowired
     protected OrganizationService organizationService;
-   
+
+
     @RequestMapping(value="/query")
-    public List<OrganizationEntity> findAll(OrganizationEntity o){
-        return organizationService.findList(o);
+    public ModelAndView query(OrganizationEntity entity, ModelAndView model,
+                              HttpServletRequest request, HttpServletResponse response) throws Exception
+    {
+        model.addObject("page", organizationService.queryPage(new Page<OrganizationEntity>(request, response), entity));
+        model.addObject("entity", entity);
+        model.setViewName("organization/list");
+        return model;
     }
+
+    @RequestMapping(value="/save")
+    public String Save(OrganizationEntity o){
+        organizationService.save(o);
+        return "redirect:/organization/query.do";
+    }
+    @RequestMapping(value="/update")
+    public String Update(String id,ModelMap modelMap){
+        modelMap.addAttribute("update",organizationService.get(id));
+        return "redirect:/organization/query.do";
+    }
+
 }
