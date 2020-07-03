@@ -42,7 +42,8 @@ public class OrganizationController {
 
     @RequestMapping(value="/save")
     public String Save(OrganizationEntity o){
-        organizationService.save(o);
+        System.out.println("执行保存方法");
+//        organizationService.save(o);
         return "redirect:/organization/query.do";
     }
       @RequestMapping(value="/delete")

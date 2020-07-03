@@ -47,7 +47,12 @@
 
     </resultMap>
     <select id="findList" resultMap="organization" >
-       select o.id,o.organization_name,o.ah_id,b.ANNUAL_FEE,c.name,c.MOBILE_PHONE,e.employee_name from organization o left join business b on o.id=b.id left join CONTACTS c on o.id=c.ORGANIZATION_ID left join employee e on c.employee_id=e.id where o.organization_name=#{organizationName}
+       select o.id,o.organization_name,o.ORGANIZATION_LEVEL,o.INDUSTRY_CATEGORY,o.IMPORTANCE_LEVEL,o.COMPANY_LEVEL,o.ORGANIZATION_ADDRESS,o.TELEPHONE,o.COUNTRY,o.WEBSITE,o.ah_id,b.ANNUAL_FEE,c.name,c.MOBILE_PHONE,e.employee_name from organization o left join business b on o.id=b.id left join CONTACTS c on o.id=c.ORGANIZATION_ID left join employee e on c.employee_id=e.id <where>
+       <if test="organizationName != null and organizationName != ''">
+       and o.organization_name like concat(concat('%',#{organizationName}),'%')
+-- %${organizationName}%'
+       </if>
+       </where>
     </select>
     <insert id="insert" parameterType="organization">
         insert into organization(organization_name,organization_address) values(#{organizationName},#{organizationAddress})

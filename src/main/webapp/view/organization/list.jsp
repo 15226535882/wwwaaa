@@ -36,7 +36,7 @@
                     <tr>
                         <th><input type="checkbox" id="checkall"/></th>
                         <th>机构名称</th>
-                        <th>机构地址</th>
+                        <th>机构详细地址</th>
                         <th>联系人</th>
                         <th>电话</th>
                         <th>国家</th>
@@ -61,10 +61,10 @@
                             <td>${e.city }</td>
                             <td>${e.liuContractEntities[0].employeeEntity.employeeName}</td>
                             <td>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" id="view" name="organization/create.jsp">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" id="update2" name="organization/update.jsp">
                                     <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>详情
                                 </button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" id="update" name="organization/delete.do">
+                                <button type="button" class="btn btn-danger" data-toggle="modal" id="update3" name="organization/updata.jsp">
                                     <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>修改
                                 </button>
                                 <button type="button" class="btn btn-danger" data-toggle="modal" id="delete" name="organization/delete.do">
@@ -95,12 +95,12 @@
             }
         });
 
-        // //点击展示页面添加按钮触发事件
-        // $('#create').click(function()
-        // {
-        //     var url = $(this).attr('name');
-        //     document.location.href=root+'view/'+url;
-        // });
+        //点击展示页面添加按钮触发事件
+        $('#creates').click(function()
+        {
+            var url = $(this).attr('name');
+            document.location.href=root1+'view/'+url;
+        });
         //
         // //点击展示页面添加按钮触发事件
         // $('#add').click(function()
@@ -109,15 +109,17 @@
         //     document.location.href=root+url;
         // });
         //
-        // //修改选中的节点数据
-        // $('#update').click(function()
-        // {
-        //     if($.selectedCount('update'))
-        //     {
-        //         var url = root+$(this).attr('name');
-        //         $("#searchForm").attr('action', url).submit();
-        //     }
-        // });
+        //修改选中的节点数据
+        $('#update2').click(function()
+        {
+            if($.selectedCount('update'))
+            {
+                var url = root+$(this).attr('name');
+                $("#searchForm").attr('action', url).submit();
+            }
+        });
+        //修改选中的节点数据
+
         //
         // //删除选中的节点数据
         // $('#delete').click(function()

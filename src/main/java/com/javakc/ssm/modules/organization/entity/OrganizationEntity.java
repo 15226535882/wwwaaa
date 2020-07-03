@@ -30,22 +30,23 @@ public class OrganizationEntity extends BaseEntity<OrganizationEntity>{
     /** 机构地址 */
     private String organizationAddress;
     /** 手机 */
+    private String province;
+    private String city;
 
     /** 电话 */
     private String telephone ;
     /** 国家 */
     private int country ;
 
-
     public String getAhId() {
         return ahId;
     }
 
+
     public void setAhId(String ahId) {
         this.ahId = ahId;
     }
-    private String province;
-    private String city;
+
 
     public String getProvince() {
         return province;
