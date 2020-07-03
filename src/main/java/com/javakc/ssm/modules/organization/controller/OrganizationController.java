@@ -1,6 +1,7 @@
 package com.javakc.ssm.modules.organization.controller;
 
 import com.javakc.ssm.base.page.Page;
+import com.javakc.ssm.modules.organization.entity.LiuContractEntity;
 import com.javakc.ssm.modules.organization.entity.OrganizationEntity;
 import com.javakc.ssm.modules.organization.service.OrganizationService;
 
@@ -13,6 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -58,5 +61,18 @@ public class OrganizationController {
 
         return "organization/create";
     }
+    @RequestMapping(value="/createcontract")
+    public ModelAndView createcontract(LiuContractEntity liuContractEntity,ModelAndView modelAndView){
+
+        OrganizationEntity organizationEntity = new OrganizationEntity();
+        List<LiuContractEntity> liuContractEntities =new ArrayList<LiuContractEntity>();
+        liuContractEntities.add(liuContractEntity);
+        organizationEntity.setLiuContractEntities(liuContractEntities);
+        modelAndView.addObject("organizationEntity",organizationEntity);
+        modelAndView.setViewName("organization/create");
+
+        return modelAndView;
+    }
+
 
 }

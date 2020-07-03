@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    String createcontract = request.getContextPath()+"/";
+%>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>数据字典添加页面</title>
+    <title>机构添加页面</title>
     <%@ include file="../../common/jsp/header.jsp"%>
     <link href="${path }/static/css/plugins/file-input/fileinput.min.css" rel="stylesheet">
 </head>
@@ -41,7 +44,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="for 属性规定 label 与哪个表单元素绑定">联系人</label>
                     <div class="col-sm-2">
-                        <input class="form-control" type="text" name="liuContractEntities.name" placeholder="联系人"/>
+                        <input class="form-control" id="createcontract"  name="organizationEntity.liuContractEntities[0].name" value="${organizationEntity.liuContractEntities[0].name}" placeholder="创建联系人"/>
                     </div>
                     <label class="col-sm-2 control-label" for="for 属性规定 label 与哪个表单元素绑定">机构级别</label>
                     <div class="col-sm-2">
@@ -52,7 +55,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="for 属性规定 label 与哪个表单元素绑定">手机</label>
                     <div class="col-sm-2">
-                        <input class="form-control" type="text" name="liuContractEntities.mobilePhone" placeholder="手机"/>
+                        <input class="form-control" type="text" name="organizationEntity.liuContractEntities[0].mobilePhone" value="${organizationEntity.liuContractEntities[0].mobilePhone}" placeholder="手机"/>
                     </div>
                     <label class="col-sm-2 control-label" for="for 属性规定 label 与哪个表单元素绑定">行业类别</label>
                     <div class="col-sm-2">
@@ -118,3 +121,19 @@
 <script type="text/javascript" src="${path }/static/js/plugins/file-input/fileinput.min.js"></script>
 <script type="text/javascript" src="./js/dictionary.js"></script>
 </html>
+<script>
+    $(function () {
+        var root2 = '<%=createcontract%>';
+
+        //点击触发事件
+        $('#createcontract').click(function()
+        {
+
+            document.location.href=root2+"view/organization/contract.jsp";
+
+        });
+
+
+    })
+
+</script>
